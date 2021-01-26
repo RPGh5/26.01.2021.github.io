@@ -1,0 +1,44 @@
+body{
+    background-color: #feb544;
+    padding: 0%;
+    margin: 0%;
+    height: 100%;
+}
+header{
+    width: 100vw;
+    height: 15vh;
+    top: 0;
+    text-align: center;
+    background-color: #eac74f;
+    margin: 0;
+    clear: both;
+}
+section{
+    float: left;
+    width: 33vw;
+    height: 70vh;
+}
+#center{
+    background-color: snow;
+    text-align: center;
+}
+#center a{
+    align-self: start;
+}
+#right{
+    text-align: center;
+    background-color: #feb544;
+}
+#left{
+    background-color: #feb544;
+}
+footer{
+    height: 10vh;
+    width: 100vw;
+    text-align: right;
+    bottom: 0;
+    left: 0;
+    clear: both;
+    position: absolute;
+    background-color: #eac74f;
+}
