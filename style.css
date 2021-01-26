@@ -42,3 +42,12 @@ footer{
     position: absolute;
     background-color: #eac74f;
 }
+#top{
+    height: 30%
+}
+#middle{
+    height: 40%
+}
+#bottom{
+    height: 30%
+}
