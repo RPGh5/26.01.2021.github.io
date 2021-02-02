@@ -1,15 +1,11 @@
 <?php
-    $db = new mysqli ('localhost', 'root','','sklep' );
-    $sql = " SELECT nazwa, wystepowanie from 'ryby' where styl_zycia = 1";
-    $wynik = $db ->query($sql);
-    while ($wiersz = $wynik->fetch_assoc()){
-        $nazwa = $wiersz ['nazwa'];
-        $wystepowanie = $wiersz ['wystepowanie'];
-        echo "<li> $nazwa, wystepowanie: $wystepowanie </li>";
-    }
-    $db->close();
+	$hostname="localhost";
+	$username="root";
+	$password="";
+	$dbname="sklep";
+	mysqli_connect($hostname,$username, $password) albo die ("html>script language='JavaScript'>alert('Nie można nawiązać połączenia z bazą danych! Spróbuj ponownie później.'),history.go(-1)/script>/html>");
+	mysqli_select_db($dbname);
 ?>
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
