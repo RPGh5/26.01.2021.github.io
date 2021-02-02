@@ -15,7 +15,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="style.css" rel="stylesheet" type="text/css">
-    <title>Sklep</title>
+    <title>Sklep Papierniczy</title>
 </head>
 <body>
     <header>
@@ -28,18 +28,14 @@
         </article>
         <article id="middle">
             <ul>
-                <li>
-
-                </li>
-                <li>
-                    
-                </li>
-                <li>
-                    
-                </li>
-                <li>
-                    
-                </li>
+                <?php
+                    $wynik=mysqli_query($baza, "select nazwa from towary where promocja=1");
+                    while ($linia=msqli_query($wynik)){
+                        echo '<li>';
+                        echo $linia[0];
+                        echo '</li>';
+                    }
+                ?>
             </ul>
         </article>
         <article id="bottom">
@@ -48,12 +44,22 @@
     </section>
     <section id="center">
         <h3>Cena wybranego artykułu w promocji</h3>
-        <a>
-            <select>
-
+        <form ation="index.html" methode="post">
+            <select name="formularz">
+                <option value="Gumka do mazania">Gumka do mazania</value>
+                <option value="Cienkopis">Cienkopis</value>
+                <option value="Pisaki 60sz.">isaki 60sz.</value>
+                <option value="Markery 4sz.">Markery 4sz.</value>
             </select>
-            <button>WYBIERZ</button>
-        </a>
+            <input type="submit" value="WYBIERZ">
+        </form>
+        <?php
+            if (isset($_POST['formularz'])){
+                $wynik=mysqli_query($baza, "select cena from towary where nazwa='".POST['formularz]."'");
+                $linia=mysqli_fetch_row($wynik);
+                echo $linia[0]*0.85;
+            }
+        ?>
     </section>
     <section id="right">
         <h3>Kontakt</h3>
