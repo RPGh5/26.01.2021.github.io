@@ -1,3 +1,15 @@
+<?php
+    $db = new mysqli ('localhost', 'root','','sklep' );
+    $sql = " SELECT nazwa, wystepowanie from 'ryby' where styl_zycia = 1";
+    $wynik = $db ->query($sql);
+    while ($wiersz = $wynik->fetch_assoc()){
+        $nazwa = $wiersz ['nazwa'];
+        $wystepowanie = $wiersz ['wystepowanie'];
+        echo "<li> $nazwa, wystepowanie: $wystepowanie </li>";
+    }
+    $db->close();
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
